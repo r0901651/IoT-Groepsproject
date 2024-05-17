@@ -1,7 +1,7 @@
 # IoT-Groepsproject
 
 # Pinout Wiring
-
+Below are the pinout wiring details for the RFID-RC522, HX711, and 28BYJ Driver. Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 as specified to avoid any issues.
 ## RFID-RC522
 
 | Pin  | Color  | Connection |
