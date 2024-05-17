@@ -35,5 +35,6 @@ Below are the pinout wiring details for the RFID-RC522, HX711, and 28BYJ Driver.
 
 ## Schematic
 Devices are separately wired to the breadboard in the schematic for better overview.
+<br>
 Wiring for your load cell to the HX711 can be different from the schematic !
 ![IoT_groepsproject_bb](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/b4c1d9a1-16ac-46d0-936e-dd7b0d714a1d)
