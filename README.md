@@ -34,4 +34,5 @@ Below are the pinout wiring details for the RFID-RC522, HX711, and 28BYJ Driver.
 | IN4     | Black  | GPIO26     |
 
 ## Schematic
+Devices are separately wired to the breadboard in the schematic for better overview.
 ![IoT_groepsproject_bb](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/3788f68d-d4c6-4496-8499-084b357a9a47)
