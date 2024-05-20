@@ -19,8 +19,8 @@ Below are the pinout wiring details for the RFID-RC522, HX711, and 28BYJ Driver.
 |-------|---------|-----------------|
 | VCC   | Red     | 5V              |
 | GND   | Blue    | GND             |
-| DT    | Black   | GPIO6           |
-| SCK   | White   | GPIO5           |
+| DT    | Black   | GPIO5           |
+| SCK   | White   | GPIO6           |
 
 ## 28BYJ Driver
 
