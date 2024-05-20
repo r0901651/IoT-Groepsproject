@@ -1,3 +1,4 @@
+# Script to lock the door by rotating the motor clockwise
 import RPi.GPIO as GPIO
 import time
 
@@ -34,7 +35,12 @@ def set_step_clock(step):
     GPIO.output(IN3, STEP_SEQUENCE_CLOCKWISE[step][2])
     GPIO.output(IN4, STEP_SEQUENCE_CLOCKWISE[step][3])
 
+def write_motor_state():
+    with open('motor-state.txt', 'w') as file:
+        file.write("locked")
+
 def rotate_clockwise(degrees):
+    write_motor_state()  # Write the motor state to the file
     steps = int(degrees / 30) * STEPS_DEG
     for _ in range(steps):
         for step in range(8):
@@ -55,5 +61,3 @@ if __name__ == '__main__':
         print("\nProgram stopped by user.")
     finally:
         cleanup()
-
-        

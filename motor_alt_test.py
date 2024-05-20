@@ -1,3 +1,4 @@
+# Script to unlock the door by rotating the motor counterclockwise
 import RPi.GPIO as GPIO
 import time
 
@@ -34,7 +35,12 @@ def set_step_countclock(step):
     GPIO.output(IN3, STEP_SEQUENCE_COUNTCLOCKWISE[step][2])
     GPIO.output(IN4, STEP_SEQUENCE_COUNTCLOCKWISE[step][3])
 
+def write_motor_state():
+    with open('motor-state.txt', 'w') as file:
+        file.write("unlocked")
+
 def rotate_counterclockwise(degrees):
+    write_motor_state()  # Write the motor state to the file
     steps = int(degrees / 30) * STEPS_DEG
     for _ in range(steps):
         for step in range(8):
