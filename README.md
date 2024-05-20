@@ -6,7 +6,7 @@ Below are the pinout wiring details for the RFID-RC522, HX711, and 28BYJ Driver.
 
 | Pin   | Color   | Connection (Pi) |
 |-------|---------|-----------------|
-| VCC   | Red     | 5V              |
+| VCC   | Red     | 3.3V            |
 | GND   | Blue    | GND             |
 | MISO  | Black   | GPIO9           |
 | MOSI  | White   | GPIO10          |
