@@ -1,0 +1,74 @@
+# Necessary imports
+import json
+from time import sleep
+import sys
+from mfrc522 import SimpleMFRC522
+import RPi.GPIO as GPIO
+from rpi_lcd import LCD
+
+
+# Suppress GPIO warnings
+GPIO.setwarnings(False)
+
+# Initialize the RFID reader
+reader = SimpleMFRC522()
+
+# Initialize the LCD screen
+lcd = LCD()
+
+# Create a dictionary to map RFID IDs to user information
+user_dict = {
+    584187003279: {'name': 'Jorik'},
+    584188061878: {'name': 'Filip'},
+    584185031812: {'name': 'Anthoine'},
+    584153111978: {'name': 'Piet piraat'},
+    5412957131: {'name': 'bigwinnings'}
+}
+
+# Function to update the JSON file with badge data
+def update_json_file(data, filename='user_badges.json'):
+    with open(filename, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+
+try:
+    last_scanned_user = None
+    while True:
+        print("Hold a tag near the reader")
+        id, _ = reader.read()
+        
+        if last_scanned_user is None:
+            if id in user_dict:
+                user_info = user_dict[id]
+                badge_data = {
+                    'id': id,
+                    'name': user_info['name']
+                }
+                update_json_file(badge_data)
+                welcome_message = "Welcome, " + user_info['name'] + "\n"
+                lcd.text(welcome_message, 1)
+                print(json.dumps(badge_data))
+                last_scanned_user = id
+                sleep(1)
+            else:
+                print(f"Unknown user: {id}")
+                sys.exit(1)  # Exit with status code 1 to indicate failure
+        else:
+            if id == last_scanned_user:
+                user_info = user_dict[id]
+                leave_message = "Goodbye, " + user_info['name'] + "\n"
+                lcd.text(leave_message, 1)
+                print(f"{user_info['name']} has left.")
+                last_scanned_user = None
+                sys.exit(0)  # Exit with status code 0 to indicate success
+            else:
+                print(f"Unknown user: {id}")
+                sys.exit(1)  # Exit with status code 1 to indicate failure
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    raise
+except Exception as e:
+    print(f"Error: {e}")
+    sys.exit(1)
+finally:
+    GPIO.cleanup()
