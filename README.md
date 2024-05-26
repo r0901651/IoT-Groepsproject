@@ -48,12 +48,14 @@ LED's are wired with a 220Ω resistor.
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
 |   +    | Green  |     GPIO23      |
+|   -    | Blue   |     GND         |
 
 ## Red LED (box)
 LED's are wired with a 220Ω resistor.
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
 |   +    |  Red   |     GPIO24      |
+|   -    | Blue   |     GND         |
 
 ## HC-SR04 (box)
 The HC-SR04 needs a voltage divider between the Echo pin the GPIO input of your raspberry pi and the GND following one 1KΩ resistor and a 2KΩ resistor. (see schematic for more details)
