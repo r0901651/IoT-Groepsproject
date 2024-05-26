@@ -81,7 +81,7 @@ Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ
 
 ## Green LED (box)
 > [!NOTE]
-> LED's are wired with a 220Ω resistor.
+> The LED's are wired with a 220Ω resistor.
 
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
@@ -90,7 +90,7 @@ Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ
 
 ## Red LED (box)
 > [!NOTE]
-> LED's are wired with a 220Ω resistor.
+> The LED's are wired with a 220Ω resistor.
 
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
