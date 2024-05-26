@@ -38,5 +38,6 @@ Devices are separately wired to the breadboard in the schematic for better overv
 <br>
 Wiring for your load cell to the HX711 can be different from the schematic !
 
-![IoT_groepsproject_bb_v1 2](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/50ae82fe-4b08-419b-a855-db65fe84f7eb)
+![IoT_groepsproject_bb_v1 3](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/afbc68e9-d85f-46e8-b44f-228d583730e6)
+
 
