@@ -1,5 +1,27 @@
 # IoT-Groepsproject
 
+# Requirements
+| item              | amount  |
+|-------------------|---------|
+| HX711             | 2       |
+| 28BYJ             | 3       |
+| 28BYJ Driver      | 3       |
+| Raspberry pi 4B   | 1       |
+| Rapsberry pi pico | 1       |
+| BMP280            | 1       |
+| Load cell         | 2       | 
+| HC-SR04           | 1       |
+| rfid rc522        | 1       |
+| 1602 LCD Display  | 1       |
+| lcm1602 iic       | 1       | 
+| Resistor 220Ω     | 3       |
+| Resistor 1KΩ      | 1       |
+| Resistor 2KΩ      | 1       |
+| Button            | 1       | 
+<br>
+
+
+
 # Pinout Wiring
 Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the BMP-280, the LCM 1602 IIC LCD screen for the gate, the two 28BYJ Drivers for the gates and the raspberry pi pico.
 <br>
