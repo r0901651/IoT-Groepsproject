@@ -1,6 +1,6 @@
 # IoT-Groepsproject
 
-# Requirements
+# Material Requirements
 | item              | amount  |
 |-------------------|---------|
 | HX711             | 2       |
