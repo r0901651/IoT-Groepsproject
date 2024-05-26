@@ -158,7 +158,12 @@ LCM 1602 IIC I2C backpack (LCD screen)
 ## Schematic
 Devices are separately wired to the breadboard in the schematic for better overview.
 <br>
-Wiring for your load cell to the HX711 can be different from the schematic !
+
+> [!IMPORTANT]  
+> Wiring for your specific load cell to the HX711 can be different from the schematic !
+
+<kbd>[parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)</kbd>
+
 
 
 ![IoT_groepsproject_bb_v1 3](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/405d3f1e-a4b0-4aaa-96b9-c160b5dc527c)
