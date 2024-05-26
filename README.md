@@ -46,6 +46,7 @@ Ensure that you connect each component to the correct GPIO pins of the Raspberry
 | IN4    | Black  | GPIO19          |
 
 ## Green LED (box)
+[!NOTE]
 LED's are wired with a 220Ω resistor.
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
@@ -53,6 +54,7 @@ LED's are wired with a 220Ω resistor.
 |   -    | Blue   |     GND         |
 
 ## Red LED (box)
+[!NOTE]
 LED's are wired with a 220Ω resistor.
 | Pin    | Color  | Connection (Pi) |
 |--------|--------|-----------------|
@@ -60,6 +62,7 @@ LED's are wired with a 220Ω resistor.
 |   -    | Blue   |     GND         |
 
 ## HC-SR04 (box)
+[!WARNING]
 The HC-SR04 needs a voltage divider between the Echo pin the GPIO input of your raspberry pi and the GND following one 1KΩ resistor and a 2KΩ resistor. (see schematic for more details)
 | Pin   | Color   | Connection (Pi) |
 |-------|---------|-----------------|
@@ -87,6 +90,7 @@ LCM 1602 IIC I2C backpack (LCD screen)
 | SCL   | Green   | GPIO03          |
 
 ## Raspberry pi pico
+[!WARNING]
 Make sure the Pico and the main Pi have a common ground!
 | Pin   | Color   | Connection (Pi) |
 |-------|---------|-----------------|
