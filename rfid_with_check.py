@@ -10,12 +10,12 @@ from rpi_lcd import LCD
 # MQTT settings
 MQTT_HOST ="mqtt3.thingspeak.com"
 MQTT_PORT = 1883
-MQTT_KEEPALIVE_INTERVAL = 60
-MQTT_API_KEY = "LCXG16XLWFMWEJIZ"
-MQTT_TOPIC = "channels/2552598/publish"
-MQTT_CLIENT_ID = "IgImOgklMygBFjUzBhsrIjQ"
-MQTT_USER = "IgImOgklMygBFjUzBhsrIjQ"
-MQTT_PWD = "D4FAEYlpq8bNhcO2iv7Dq91F"
+MQTT_KEEPALIVE_INTERVAL =60
+MQTT_API_KEY = yourapikey
+MQTT_TOPIC = yourpublishchannel
+MQTT_CLIENT_ID = clientid
+MQTT_USER = userstring
+MQTT_PWD = password
 
 # MQTT callback functions
 def on_connect(client, userdata, flags, rc):
