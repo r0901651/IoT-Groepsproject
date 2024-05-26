@@ -1,5 +1,5 @@
 # IoT-Groepsproject
-This project is made by students of the Thomas More university of applied sciences commissioned by Thomas More for the module IoT Essentials.
+
 # Pinout Wiring
 Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the BMP-280, the LCM 1602 IIC LCD screen for the gate, the two 28BYJ Drivers for the gates and the raspberry pi pico.
 <br>
