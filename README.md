@@ -41,7 +41,7 @@ Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ
 # Software Requirements
 Python3 is needed on you raspberry pi !
 <br>
-The packages can be installed using:
+The required python packages can be installed using:
 ```
 pip install -r requirements.txt
 ```
