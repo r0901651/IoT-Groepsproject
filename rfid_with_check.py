@@ -7,19 +7,19 @@ from mfrc522 import SimpleMFRC522
 import RPi.GPIO as GPIO
 from rpi_lcd import LCD
 
-# setup MQTT
 # MQTT settings
 MQTT_HOST ="mqtt3.thingspeak.com"
 MQTT_PORT = 1883
-MQTT_KEEPALIVE_INTERVAL =60
+MQTT_KEEPALIVE_INTERVAL = 60
 MQTT_API_KEY = "LCXG16XLWFMWEJIZ"
 MQTT_TOPIC = "channels/2552598/publish"
 MQTT_CLIENT_ID = "IgImOgklMygBFjUzBhsrIjQ"
 MQTT_USER = "IgImOgklMygBFjUzBhsrIjQ"
 MQTT_PWD = "D4FAEYlpq8bNhcO2iv7Dq91F"
 
+# MQTT callback functions
 def on_connect(client, userdata, flags, rc):
-    if rc==0:
+    if rc == 0:
         print("Connected OK with result code "+str(rc))
     else:
         print("Bad connection with result code "+str(rc))
@@ -27,7 +27,7 @@ def on_connect(client, userdata, flags, rc):
 def on_disconnect(client, userdata, flags, rc=0):
     print("Disconnected result code "+str(rc))
 
-def on_message(client,userdata,msg):
+def on_message(client, userdata, msg):
     print("Received a message on topic: " + msg.topic + "; message: " + msg.payload)
 
 # Set up a MQTT Client
@@ -35,13 +35,13 @@ client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, MQTT_CLIENT_ID)
 client.username_pw_set(MQTT_USER, MQTT_PWD)
 
 # Connect callback handlers to client
-client.on_connect= on_connect
-client.on_disconnect= on_disconnect
-client.on_message= on_message
+client.on_connect = on_connect
+client.on_disconnect = on_disconnect
+client.on_message = on_message
 
 print("Attempting to connect to %s" % MQTT_HOST)
 client.connect(MQTT_HOST, MQTT_PORT)
-client.loop_start() #start the loop
+client.loop_start()  # Start the loop
 
 # Suppress GPIO warnings
 GPIO.setwarnings(False)
@@ -74,14 +74,16 @@ def update_json_file(data, filename='user_badges.json'):
     with open(filename, 'w') as json_file:
         json.dump(data, json_file, indent=4)
 
-
 try:
     last_scanned_user = None
     while True:
         print("Hold a tag near the reader")
+        # Read the RFID tag
         id, _ = reader.read()
         
+        # Process the RFID tag scan
         if last_scanned_user is None:
+            # If the tag is recognized, update the JSON file and display welcome message
             if id in user_dict:
                 user_info = user_dict[id]
                 badge_data = {
@@ -100,6 +102,7 @@ try:
                 print(f"Unknown user: {id}")
                 sys.exit(1)  # Exit with status code 1 to indicate failure
         else:
+            # If the same tag is scanned again, display leave message and exit
             if id == last_scanned_user:
                 user_info = user_dict[id]
                 leave_message = "Goodbye, " + user_info['name'] + "\n"
@@ -112,9 +115,8 @@ try:
                 print(f"Unknown user: {id}")
                 sys.exit(1)  # Exit with status code 1 to indicate failure
                 
-        # Check if the client is connected before publishing
+        # Check if the client is connected before publishing MQTT data
         if client.is_connected():
-            # Define MQTT_DATA as the total_scans variable
             MQTT_DATA = "field1={}".format(total_scans)
             client.publish(topic=MQTT_TOPIC, payload=MQTT_DATA, qos=0, retain=False)
         else:
