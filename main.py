@@ -29,15 +29,15 @@ def run_rfid_script():
                             # Check if the output is a JSON string (indicating a successful enter scan)
                             try:
                                 json.loads(line)
-                                # Execute open_gate.py subprocess if JSON is successfully loaded
-                                subprocess.run(["python3", "open_gate.py"])
+                                # Execute open-close_gate.py subprocess if JSON is successfully loaded
+                                subprocess.run(["python3", "open-close_gate.py"])
                                 # Start loadcell.py subprocess after the gate has opened
                                 loadcell_process = subprocess.Popen(["python3", "loadcell.py"])
                             except json.JSONDecodeError:
                                 # Check if the output is a string indicating the user has left (indicating a successful leave scan)
                                 if "has left" in line:
-                                    # Execute open_gate.py subprocess
-                                    subprocess.run(["python3", "open_gate.py"])
+                                    # Execute open-close_gate.py subprocess
+                                    subprocess.run(["python3", "open-close_gate.py"])
                                     if loadcell_process is not None:  # If loadcell.py is running
                                         # Terminate loadcell.py subprocess
                                         loadcell_process.terminate()
