@@ -22,6 +22,18 @@ import threading
 import subprocess
 import time
 
+# setup MQTT
+# MQTT settings
+MQTT_HOST ="mqtt3.thingspeak.com"
+MQTT_PORT = 1883
+MQTT_KEEPALIVE_INTERVAL =60
+MQTT_API_KEY = yourapikey
+MQTT_TOPIC = yourpublishchannel
+MQTT_CLIENT_ID = clientid
+MQTT_USER = userstring
+MQTT_PWD = password
+
+
 # set GPIO pin mode to BCM numbering
 GPIO.setmode(GPIO.BCM)
 
@@ -142,6 +154,32 @@ except Exception as e:
 # for adc in hx711._adcs:
 #     print(adc.raw_reads)  # these are the 2's complemented values read bitwise from the hx711
 #     print(adc.reads)  # these are the raw values after being converted to signed integers
+
+def on_connect(client, userdata, flags, rc):
+    if rc==0:
+        print("Connected OK with result code "+str(rc))
+    else:
+        print("Bad connection with result code "+str(rc))
+
+def on_disconnect(client, userdata, flags, rc=0):
+    print("Disconnected result code "+str(rc))
+
+def on_message(client,userdata,msg):
+    print("Received a message on topic: " + msg.topic + "; message: " + msg.payload)
+
+# Set up a MQTT Client
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION1, MQTT_CLIENT_ID)
+client.username_pw_set(MQTT_USER, MQTT_PWD)
+
+# Connect callback handlers to client
+client.on_connect= on_connect
+client.on_disconnect= on_disconnect
+client.on_message= on_message
+
+print("Attempting to connect to %s" % MQTT_HOST)
+client.connect(MQTT_HOST, MQTT_PORT)
+client.loop_start() #start the loop
+
 
 
 hx711.set_weight_multiples(weight_multiples=weight_multiples)
@@ -301,6 +339,15 @@ try:
             print('raw', ['{:.3f}'.format(x) if x is not None else None for x in raw_vals])
             # Print the weights
             print(' wt', ['{:.3f}'.format(x) if x is not None else None for x in weights])
+            
+            if client.is_connected():
+                # Define MQTT_DATA as the total_stock_count variable
+                MQTT_DATA = "field2={}&field3={}&field4={}".format(total_stock_count[0], total_stock_count[1], box_stock_count)
+                client.publish(topic=MQTT_TOPIC, payload=MQTT_DATA, qos=0, retain=False)
+            else:
+                print("Client is not connected to ThingSpeak. Attempting to connect.")
+                client.reconnect()
+
 
 # Handle KeyboardInterrupt exception
 except KeyboardInterrupt:
