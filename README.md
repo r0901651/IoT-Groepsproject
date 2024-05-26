@@ -24,7 +24,9 @@ Below you can find the stl files for the box used in the project.
 [parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)
 <br>
 Here is also an example of the setup used for the load cells.
+
 ![HX711_and_Combinator_board_hook_up_guide-02](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/a591f61a-ee84-4797-bbca-6e24665b139d)
+
 <br>
 
 # Pinout Wiring
