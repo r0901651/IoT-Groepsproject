@@ -25,7 +25,7 @@ Below you can find the stl files for the box used in the project.
 <kbd>[parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)</kbd>
 
 <br>
-Here is also an example of the setup used for the load cells.
+Here is an example of the setup used for the load cells.
 
 ![image](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/baeeedf4-992b-495e-b82e-1fbcefbb741b)
 
