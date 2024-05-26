@@ -34,7 +34,10 @@ Here is an example of the setup used for the load cells.
 # Pinout Wiring
 Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the BMP-280, the LCM 1602 IIC LCD screen for the gate, the two 28BYJ Drivers for the gates and the raspberry pi pico.
 <br>
-Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 and pico as specified to avoid any issues.
+
+> [!IMPORTANT]  
+> Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 and pico as specified to avoid any issues with our code.
+
 ## RFID-RC522
 
 | Pin   | Color   | Connection (Pi) |
