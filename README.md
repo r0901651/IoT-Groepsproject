@@ -159,8 +159,6 @@ LCM 1602 IIC I2C backpack (LCD screen)
 > [!NOTE]
 > Devices are separately wired to the breadboard in the schematic for better overview.
 
-<br>
-
 > [!IMPORTANT]  
 > Wiring for your specific load cell to the HX711 can be different from the schematic !
 
