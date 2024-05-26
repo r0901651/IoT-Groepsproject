@@ -38,6 +38,18 @@ Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ
 > [!IMPORTANT]  
 > Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 and pico as specified to avoid any issues with our code.
 
+# Software Requirements
+Python3 is needed on you raspberry pi !
+<br>
+The packages can be installed using:
+```
+pip install -r requirements.txt
+```
+or
+```
+pip3 install -r requirements.txt
+```
+
 ## RFID-RC522
 
 | Pin   | Color   | Connection (Pi) |
