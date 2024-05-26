@@ -19,8 +19,12 @@
 | Resistor 2KΩ      | 1       |
 | Button            | 1       | 
 <br>
-
-
+Below you can find the stl files for the box used in the project.
+<kbd>[parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)</kbd>
+<br>
+Here is also an example of the setup used for the load cells.
+![image](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/ebedf676-a185-4d33-a88d-5b11d1d27e83)
+<br>
 
 # Pinout Wiring
 Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the BMP-280, the LCM 1602 IIC LCD screen for the gate, the two 28BYJ Drivers for the gates and the raspberry pi pico.
