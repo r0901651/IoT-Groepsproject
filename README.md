@@ -1,7 +1,9 @@
 # IoT-Groepsproject
 
 # Pinout Wiring
-Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the two 28BYJ Drivers for the gates,   . Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 as specified to avoid any issues.
+Below are the pinout wiring details for the RFID-RC522, HX711 1 and 2, the 28BYJ Driver for the main box, the box status LED's, the HC-SR04 for the box, the BMP-280, the LCM 1602 IIC LCD screen for the gate, the two 28BYJ Drivers for the gates and the raspberry pi pico.
+<br>
+Ensure that you connect each component to the correct GPIO pins of the Raspberry Pi 4 and pico as specified to avoid any issues.
 ## RFID-RC522
 
 | Pin   | Color   | Connection (Pi) |
@@ -66,6 +68,52 @@ The HC-SR04 needs a voltage divider between the Echo pin the GPIO input of your 
 | TRIQ  | Green   | GPIO20          |
 | ECHO  | Black   | GPIO21          |
 
+## BMP-280
+
+| Pin   | Color   | Connection (Pi) |
+|-------|---------|-----------------|
+| VCC   | Red     | 5V              |
+| GND   | Blue    | GND             |
+| SDI   | Yellow  | GPIO02          |
+| SCK   | Green   | GPIO03          |
+
+## LCM 1602 IIC
+LCM 1602 IIC I2C backpack (LCD screen)
+| Pin   | Color   | Connection (Pi) |
+|-------|---------|-----------------|
+| VCC   | Red     | 5V              |
+| GND   | Blue    | GND             |
+| SDA   | Yellow  | GPIO02          |
+| SCL   | Green   | GPIO03          |
+
+## Raspberry pi pico
+Make sure the Pico and the main Pi have a common ground!
+| Pin   | Color   | Connection (Pi) |
+|-------|---------|-----------------|
+| GND   | Blue    | GND             |
+| GPIO16| White   | GPIO25          |
+
+## 28BYJ Driver 1 (gate)
+
+| Pin    | Color  | Connection (Pico) |
+|--------|--------|-------------------|
+| 5-12V+ | Red    |                   |
+| 5-12V- | Blue   |                   |
+| IN1    | Purple | GPIO2             |
+| IN2    | Yellow | GPIO3             |
+| IN3    | Green  | GPIO4             |
+| IN4    | Orange | GPIO5             |
+
+## 28BYJ Driver 2 (gate)
+
+| Pin    | Color  | Connection (Pico) |
+|--------|--------|-------------------|
+| 5-12V+ | Red    |                   |
+| 5-12V- | Blue   |                   |
+| IN1    | Purple | GPIO6             |
+| IN2    | Yellow | GPIO7             |
+| IN3    | Green  | GPIO8             |
+| IN4    | Orange | GPIO9             |
 
 
 ## Schematic
@@ -73,6 +121,6 @@ Devices are separately wired to the breadboard in the schematic for better overv
 <br>
 Wiring for your load cell to the HX711 can be different from the schematic !
 
-![IoT_groepsproject_bb_v1 3](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/afbc68e9-d85f-46e8-b44f-228d583730e6)
 
+![IoT_groepsproject_bb_v1 3](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/aa8e77c2-7c1d-435f-8189-71be907b4b69)
 
