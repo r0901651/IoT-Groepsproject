@@ -20,7 +20,7 @@
 | Button            | 1       | 
 <br>
 Below you can find the stl files for the box used in the project.
-<kbd>[parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)</kbd>
+[parts.zip](https://github.com/r0901651/IoT-Groepsproject/files/15448882/parts.zip)
 <br>
 Here is also an example of the setup used for the load cells.
 ![image](https://github.com/r0901651/IoT-Groepsproject/assets/95848828/ebedf676-a185-4d33-a88d-5b11d1d27e83)
