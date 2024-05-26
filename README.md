@@ -57,7 +57,6 @@ LED's are wired with a 220Ω resistor.
 
 ## HC-SR04 (box)
 The HC-SR04 needs a voltage divider between the Echo pin the GPIO input of your raspberry pi and the GND following: Echo --> 1KΩ resistor --> GPIO
-<br>
 | Pin   | Color   | Connection (Pi) |
 |-------|---------|-----------------|
 | VCC   | Red     | 5V              |
